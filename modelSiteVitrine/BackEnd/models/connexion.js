@@ -1,0 +1,17 @@
+const {Sequelize,DataTypes} = require('sequelize');
+require('dotenv').config(); 
+
+//connction à la base de données
+// const database = new Sequelize(`mysql://${process.env.BD_USERNAME}:${process.env.BD_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_DATABASE}`);
+
+const database = new Sequelize(`mysql://root:@localhost:3306/template`);
+
+database.authenticate()
+    .then(() => console.log("REUSSIE!!! connectée a Mysql")
+    )
+    .catch(err =>console.log("error: " + err));
+
+
+module.exports = {Sequelize, DataTypes,database};
+
+
