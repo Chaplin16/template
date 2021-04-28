@@ -1,9 +1,9 @@
-const http = require('http'); //utilisation de http pour transférer des données 
-const app = require('./app'); 
+const http = require('http');
+const app = require('./app');
 
-const normalizePort = val => { //renvoie un port valide, qu'il soit fourni sous la forme d'un numéro ou d'une chaîne ;
+const normalizePort = val => {
   const port = parseInt(val, 10);
-  
+
   if (isNaN(port)) {
     return val;
   }
@@ -12,10 +12,10 @@ const normalizePort = val => { //renvoie un port valide, qu'il soit fourni sous 
   }
   return false;
 };
-const port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-const errorHandler = error => { //recherche les différentes erreurs et les gère de manière appropriée. Elle est ensuite enregistrée dans le serveur ;
+const errorHandler = error => {
   if (error.syscall !== 'listen') {
     throw error;
   }
@@ -27,7 +27,6 @@ const errorHandler = error => { //recherche les différentes erreurs et les gèr
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      
       console.error(bind + ' is already in use.');
       process.exit(1);
       break;
@@ -45,4 +44,4 @@ server.on('listening', () => {
   console.log('Listening on ' + bind);
 });
 
-server.listen(port); //un écouteur d'évènements est enregistré, consignant le port ou le canal nommé sur lequel le serveur s'exécute dans la console.
+server.listen(port);

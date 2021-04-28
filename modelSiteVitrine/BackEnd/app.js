@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 const path = require('path'); //donne acces au chemin de notre systeme de fichier
 
@@ -17,6 +17,7 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS'); //methode acceptées
     next();
 });
+
 
 //remplace body-parser deprecié
 app.use(express.urlencoded({extended: true})); //remplace bodyParser.json() deprecié depuis 2014

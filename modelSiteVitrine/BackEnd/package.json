@@ -18,13 +18,17 @@
   },
   "homepage": "https://github.com/Chaplin16/template#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
     "http": "^0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.2",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "node-sass": "^5.0.0",
+    "password-validator": "^5.1.1",
     "path": "^0.12.7",
     "sequelize": "^6.6.2"
   }

@@ -23,10 +23,6 @@ const User = database.define('User', {
       required: true,
       type: DataTypes.STRING,
     },
-    avatar: {
-      allowNull: true,
-      type: DataTypes.STRING,
-    },
   }, {
     Sequelize,
     modelName: 'User',
