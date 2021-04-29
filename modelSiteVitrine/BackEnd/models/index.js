@@ -3,7 +3,9 @@ const Product = require('../models/product');
 const Role = require('../models/role');
 
 
-Product.belongsTo(User);   
+Product.belongsTo(User, {
+    foreignKey: 'userId'
+  });   
 
 async function loadModel() {
     await User.sequelize.query('SET FOREIGN_KEY_CHECKS = 0', null)

@@ -9,7 +9,8 @@ const database = new Sequelize(`mysql://root:@localhost:3306/template`);
 database.authenticate()
     .then(() => console.log("REUSSIE!!! connectée a Mysql")
     )
-    .catch(err =>console.log("error: " + err));
+    .catch(err =>console.log("error: " + err)
+    );
 
 
 module.exports = {Sequelize, DataTypes, database};

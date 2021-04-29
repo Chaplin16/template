@@ -2,10 +2,6 @@
 const {Sequelize,DataTypes, database} = require('./connexion');
 
 const Product = database.define('Product', {
-    userId:{
-      allowNull: false,
-      type: DataTypes.INTEGER,
-    },
     attachment: {
       allowNull: true,
       type: DataTypes.STRING,

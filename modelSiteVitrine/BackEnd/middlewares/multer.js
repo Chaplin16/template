@@ -28,4 +28,4 @@ module.exports = multer({
     limits: { 
         fileSize: maxSize 
     }
-}).single('images');
+}).single('attachment');

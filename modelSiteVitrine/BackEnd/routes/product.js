@@ -7,11 +7,12 @@ const multer = require('../middlewares/multer');
 
 // ROUTES PRODUCT
 router.post('/', auth, multer, productControllers.createProduct);
-
+router.put('/:id/update', auth, productControllers.modifyProduct);
 //router.get('/getProducts/:UserId', auth, productControllers.getProducts);
-// router.get('/getAll', auth, productControllers.getAllProducts);
+router.get('/getAll', auth, productControllers.getAllProducts);
 
-// router.delete('/:id/delete', auth, productControllers.productDelete);
+
+router.delete('/:id/delete', auth, multer, productControllers.deleteProduct);
 
 
 module.exports = router;
