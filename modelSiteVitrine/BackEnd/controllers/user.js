@@ -68,7 +68,7 @@ exports.login = (req, res, next) => {
                         )
                     });
                 })
-                .catch(error => res.status(500).send({ error }));
+                .catch(error => res.status(500).send({ message: error }));
         })
         .catch(error =>
             res.status(500).send({ error })
