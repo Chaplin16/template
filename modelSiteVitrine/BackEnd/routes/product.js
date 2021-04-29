@@ -7,7 +7,7 @@ const multer = require('../middlewares/multer');
 
 // ROUTES PRODUCT
 router.post('/', auth, multer, productControllers.createProduct);
-router.put('/:id/update', auth, productControllers.modifyProduct);
+router.put('/:id/update', auth, multer, productControllers.modifyProduct);
 //router.get('/getProducts/:UserId', auth, productControllers.getProducts);
 router.get('/getAll', auth, productControllers.getAllProducts);
 
