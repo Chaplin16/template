@@ -1,8 +1,14 @@
+const User = require('../models/user');
+
 'use strict';
 const {Sequelize,DataTypes, database} = require('./connexion');
 
 const Product = database.define('Product', {
-    attachment: {
+    userId:{
+      type: Sequelize.INTEGER,
+      references: { model: User, key: 'id' },
+    },
+      attachment: {
       allowNull: true,
       type: DataTypes.STRING,
     },
@@ -24,5 +30,8 @@ const Product = database.define('Product', {
     paranoid: false
     }
 );
+
+
+Product.belongsTo(User);  
 
 module.exports = Product;

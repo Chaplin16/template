@@ -1,5 +1,5 @@
-const Product = require('../models/index').Product;
-const User = require('../models/index').User;
+const Product = require('../models/product');
+const User = require('../models/user');
 const firesystem = require('fs');
 const multer = require('../middlewares/multer');
 const auth = require('../middlewares/auth');
@@ -108,7 +108,7 @@ exports.deleteProduct = (req, res, next) => {
 //route pour modifier son profil 
 exports.modifyProduct = (req, res, next) => {
     if(req.file) {
-        const productObject = req.body;
+        const productObject = JSON.parse(req.body.product);
         Product.findOne({ 
             where: { id: req.params.id },
             include:{ model:User }
@@ -141,8 +141,6 @@ exports.modifyProduct = (req, res, next) => {
                     }).catch(error => res.status(404).json({ error:"erreur dans la requête1" })); 
                     })            
                 })
-                .catch(error => res.status(404).json({ error:"erreur dans la requête2" })); 
-               
-            
+                .catch(error => res.status(404).json({ error:"erreur dans la requête2" }));         
     }
 }
