@@ -1,0 +1,45 @@
+<nav>
+    <style>
+        #menu{
+            --color__background--navbar: #b3cbe4;
+            --color__letter--navbar:#123696;
+            --font-size--navbar: 1.3rem;
+        }
+        nav #menu {
+            display: flex;
+            list-style-type: none;
+            background-color: var(--color__background--navbar) ;
+            font-size: var(--font-size--navbar);
+            margin: 0px;
+            padding: 0px;
+            position: fixed;
+            width: 100%;
+            top: 0px;
+        }
+        nav #menu .nav-item {
+            padding: 15px;
+        }
+        nav #menu .nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            }
+            nav #menu .nav-item a {
+            color: var(--color__letter--navbar);
+            text-decoration: none;
+            font-size: 1em;
+            }
+    </style>
+    <ul id="menu">
+        <li class="nav-item">
+            <img src="" class="logo">
+        </li>
+        <li class="nav-item">
+            <a href="index.html">Accueil</a>
+        </li>
+        <li class="nav-item">
+            <a href="#"> Nos produits </a>
+        </li>
+        <li class="nav-item">
+            <a href="#"> Contact </a>
+        </li>
+    </ul>
+</nav>  
