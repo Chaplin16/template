@@ -1,0 +1,263 @@
+
+
+            <section id="card" class="cards">
+                <style>
+                    #card{
+                        --color__background--card:#ebebeb;
+                        --color__background--back-img:#6f6f70;
+                        --color__background--btnSeeDetailProduct:#eec3aa;
+                    }
+                    .cards{
+                        display: flex;
+                        flex-wrap: wrap;
+                        row-gap:1rem;
+                    }
+                    
+                    .item{
+                        flex-direction: column;
+                        max-width:44%;
+                        margin:auto;
+                        border: 2px solid #000;
+                        border-radius: 25px;
+                        align-items: center;
+                        background-color: var(--color__background--card) ;
+                        color: #000;
+                        font-size: 0.9rem;
+                    }
+                    .item--img p{
+                        border: 1px solid #000;
+                        margin:5px;
+                        border-top-left-radius: 15px;
+                        border-top-right-radius: 15px;
+                        overflow: hidden;
+                        background-color: var(--color__background--back-img);
+                    }
+                    .item--img img{
+                        object-fit: contain;
+                        width: 100%;
+                         
+                        max-height: 150px; 
+                    }
+                    .item--description{
+                        padding:0 0.8rem 0rem 0.8rem;
+                        text-align: justify;
+                    }
+                    .item--description p{
+                        padding-top:1rem;
+                    }
+                    .item--description .title{
+                        font-weight:bold;
+                        font-size:1.2rem;
+                    }
+                    .item--description .price{
+                        float:right;
+                        font-weight: bold;
+                    }
+                    .btn_detail--product{
+                        padding:0.5rem;
+                        margin:15px 0;
+                        border-radius:10px;
+                        font-weight: bold;
+                        background-color: var(--color__background--btnSeeDetailProduct);    
+                        transform: scale(1);
+                    }
+                    .btn_detail--product:hover{
+                        transform: scale(1.1);
+                    }
+                    @media all and (min-width: 600px) {
+                        .item{
+                            max-width:30%;
+                        }
+                    }
+                    @media all and (min-width: 850px) {
+                        .item{
+                            max-width:22%;
+                        }
+                    }
+                    @media all and (min-width: 1150px) {
+                        .cards{
+                            margin:0 2rem;
+                        }
+                    }
+                    @media all and (min-width: 1350px) {
+                        .item{
+                            max-width: 18%;
+                        }
+                    }
+                </style>
+                <div class="item">
+                    <div class=item--img>
+                        <p>
+                       <img src="img/avatar24.png" alt="photo de l'article">
+                        </p>
+                    </div>
+                    <div class="item--description">
+                        <p class="title">
+                            Nom de l'article
+                        </p>
+                        <p class="text"> 
+                            rapide description quelques mots
+                        </p>
+                        <p class="price">
+                            20€
+                        </p>
+                        <input type="submit" id="btn_detail--product" type="button" onclick="window.location.href ='#';" class="btn_detail--product" data-id="#" data-image="#" data-name="#" data-price="#" value="plus de détails">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class=item--img>
+                        <p>
+                            <img src="img/IMG-20200217-WA0034.jpg" alt="photo de l'article">
+                        </p>
+                    </div>
+                    <div class="item--description">
+                        <p class="title">
+                            Nom de l'article
+                        </p>
+                        <p class="text"> 
+                            rapide description quelques mots
+                        </p>
+                        <p class="price">
+                            20€
+                        </p>
+                        <input type="submit" id="btn_detail--product" type="button" onclick="window.location.href ='#';" class="btn_detail--product" data-id="#" data-image="#" data-name="#" data-price="#" value="plus de détails">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class=item--img>
+                        <p>
+                       <img src="img/avatar24.png" alt="photo de l'article">
+                        </p>
+                    </div>
+                    <div class="item--description">
+                        <p class="title">
+                            Nom de l'article
+                        </p>
+                        <p class="text"> 
+                            rapide description quelques mots
+                        </p>
+                        <p class="price">
+                            20€
+                        </p>
+                        <input type="submit" id="btn_detail--product" type="button" onclick="window.location.href ='#';" class="btn_detail--product" data-id="#" data-image="#" data-name="#" data-price="#" value="plus de détails">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class=item--img>
+                        <p>
+                            <img src="img/IMG-20200217-WA0034.jpg" alt="photo de l'article">
+                        </p>
+                    </div>
+                    <div class="item--description">
+                        <p class="title">
+                            Nom de l'article
+                        </p>
+                        <p class="text"> 
+                            rapide description quelques mots
+                        </p>
+                        <p class="price">
+                            20€
+                        </p>
+                        <input type="submit" id="btn_detail--product" type="button" onclick="window.location.href ='productDetail.html';" class="btn_detail--product" data-id="#" data-image="#" data-name="#" data-price="#" value="plus de détails">
+
+                    </div>
+                </div>
+                <div class="item">
+                    <div class=item--img>
+                        <p>
+                            <img src="img/IMG-20200217-WA0034.jpg" alt="photo de l'article">
+                        </p>
+                    </div>
+                    <div class="item--description">
+                        <p class="title">
+                            Nom de l'article
+                        </p>
+                        <p class="text"> 
+                            rapide description quelques mots
+                        </p>
+                        <p class="price">
+                            20€
+                        </p>
+                        <input type="submit" id="btn_detail--product" type="button" onclick="window.location.href ='#';" class="btn_detail--product" data-id="#" data-image="#" data-name="#" data-price="#" value="plus de détails">
+
+                    </div>
+                </div>
+                <div class="item">
+                    <div class=item--img>
+                        <p>
+                            <img src="img/IMG-20200217-WA0034.jpg" alt="photo de l'article">
+                        </p>
+                    </div>
+                    <div class="item--description">
+                        <p class="title">
+                            Nom de l'article
+                        </p>
+                        <p class="text"> 
+                            rapide description quelques mots
+                        </p>
+                        <p class="price">
+                            20€
+                        </p>
+                        <input type="submit" id="btn_detail--product" type="button" onclick="window.location.href ='#';" class="btn_detail--product" data-id="#" data-image="#" data-name="#" data-price="#" value="plus de détails">
+
+                    </div>
+                </div>
+                <div class="item">
+                    <div class=item--img>
+                        <p>
+                       <img src="img/avatar24.png" alt="photo de l'article">
+                        </p>
+                    </div>
+                    <div class="item--description">
+                        <p class="title">
+                            Nom de l'article
+                        </p>
+                        <p class="text"> 
+                            rapide description quelques mots
+                        </p>
+                        <p class="price">
+                            20€
+                        </p>
+                        <input type="submit" id="btn_detail--product" type="button" onclick="window.location.href ='#';" class="btn_detail--product" data-id="#" data-image="#" data-name="#" data-price="#" value="plus de détails">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class=item--img>
+                        <p>
+                       <img src="img/avatar24.png" alt="photo de l'article">
+                        </p>
+                    </div>
+                    <div class="item--description">
+                        <p class="title">
+                            Nom de l'article
+                        </p>
+                        <p class="text"> 
+                            rapide description quelques mots
+                        </p>
+                        <p class="price">
+                            20€
+                        </p>
+                        <input type="submit" id="btn_detail--product" type="button" onclick="window.location.href ='#';" class="btn_detail--product" data-id="#" data-image="#" data-name="#" data-price="#" value="plus de détails">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class=item--img>
+                        <p>
+                       <img src="img/avatar24.png" alt="photo de l'article">
+                        </p>
+                    </div>
+                    <div class="item--description">
+                        <p class="title">
+                            Nom de l'article
+                        </p>
+                        <p class="text"> 
+                            rapide description quelques mots
+                        </p>
+                        <p class="price">
+                            20€
+                        </p>
+                        <input type="submit" id="btn_detail--product" type="button" onclick="window.location.href ='#';" class="btn_detail--product" data-id="#" data-image="#" data-name="#" data-price="#" value="plus de détails">
+                    </div>
+                </div>
+            </section>   
+                  

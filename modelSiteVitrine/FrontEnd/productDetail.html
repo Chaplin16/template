@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,900&display=swap">
+    <link rel="stylesheet" href="style.css">
+
+    <title>productDetail</title>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <style>
+            .carousel{
+                max-width: 75%;
+               
+                border:1px solid #000;
+                margin:auto;
+                overflow: hidden;
+                margin-top:5rem;
+            }
+            img{
+                max-width: 100%;
+                max-height: 10rem;;
+                object-fit: contain;
+            }
+            .target{
+                display: none
+            }
+            .card_diapo{
+                max-width: 80%;
+                margin: 2rem auto;
+                overflow: hidden;
+            }
+            .card__diapo--inside{                
+                display: flex;
+                width: 400%;
+                transition: transform .6s ease-in-out    
+            }
+
+
+  
+            /*image 1*/              
+            #img1:target ~ .card__diapo .card__diapo--inside{
+                transform:translatex(0)
+            }
+            /*image 2*/
+            #img2:target ~ .card__diapo .card__diapo--inside{
+                transform:translatex(-15%)
+            }
+            /*image 3*/
+            #img3:target ~ .card__diapo .card__diapo--inside{
+                transform:translatex(-30%)
+            }
+            /*image 4*/
+            #img4:target ~ .card__diapo .card__diapo--inside{
+                transform:translatex(-45%)
+            }
+
+            /*navigation avec images miniatures*/
+            .navigation__diapo{
+                display: flex; /*permet d'aligner les photos les unes à la suite des autres*/
+                list-style-type: none;
+                margin: 0;
+                padding: 0    
+            }
+
+            .navigation__diapo li {    
+                padding: .25rem;    
+            }
+
+            .navigation__diapo img{
+                border: 3px solid white;
+                box-shadow:0 0 5px hsla(0,0%,0%,.4);                
+            }
+                    
+            @media (min-width:31.25rem){     
+                .description span{        
+                   font-size: initial   
+                }
+                
+            }
+	
+        </style>
+        <section class="carousel">
+        <span id="img1" class="target">
+        </span>
+        <span id="img2" class="target">
+        </span>
+        <span id="img3" class="target">
+        </span>
+        <span id="img4" class="target">
+        </span>
+        <div class="card__diapo">
+            <div class="card__diapo--inside">
+                <div class=description__product>
+                    <span>
+                        vue de face
+                    </span>
+                    <img src="img/avatar25.png" alt="photo du produit">
+                </div>
+                <div class=description__product>
+                    <span>
+                        vue de profil
+                    </span>
+                    <img src="img/avatar26.png" alt="photo du produit">
+                </div>
+                <div class=description__product>
+                    <span>
+                        vu de dos
+                    </span>
+                    <img src="img/avatar28.png" alt="photo du produit">
+                </div>
+                <div class=description__product>
+                    <span>
+                        vue d'ensemble
+                    </span>
+                    <img src="img/avatar29.png" alt="photo du produit">
+                </div>
+            </div>
+            <ul class="navigation__diapo">
+                <li>
+                    <a href="#img1">
+                        <img src="img/avatar25.png" alt="photo du produit">
+                    </a>
+                </li>
+                <li>
+                    <a href="#img2">
+                        <img src="img/avatar26.png" alt="photo du produit">
+                    </a>
+                </li>
+                <li>
+                    <a href="#img3">
+                        <img src="img/avatar28.png" alt="photo du produit">
+                    </a>
+                </li>
+                <li>
+                    <a href="#img4">
+                        <img src="img/avatar29.png" alt="photo du produit">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+        
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

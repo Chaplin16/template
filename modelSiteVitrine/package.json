@@ -1,0 +1,22 @@
+{
+  "name": "modelsitevitrine",
+  "version": "1.0.0",
+  "description": "modele pour créer un site vitrine amélioré",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chaplin16/template.git"
+  },
+  "author": "Aurore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chaplin16/template/issues"
+  },
+  "homepage": "https://github.com/Chaplin16/template#readme",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
