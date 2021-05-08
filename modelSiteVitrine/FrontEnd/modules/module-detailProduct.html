@@ -1,21 +1,21 @@
 
+ 
 <section class="product" id="productDetail"> 
             
     <style>   
         body{
-            --color__background--pageProduct:#e6e7e9;
             --color__background--imgProductDetail:#fff;
             --color__background--textProductDetail:#f3eaf5;
-            background-color: var(--color__background--pageProduct);
+            background-color: #e6e7e9;
         }
-        h2{
+        .product h2{
             margin-top:4rem;
             margin-bottom:0;
             text-align:center;
             font-family: "merriweather";
         }
         .product{
-            max-width: 60%;
+            width: 16rem;  
             margin: auto;
         }
         .carousel{
@@ -42,7 +42,7 @@
         }
         .card__diapo--inside{                
             display: flex;
-            width: 450%;
+            width: 500%;
             transition: transform .6s ease-in-out    
         }
         .description__product{
@@ -50,13 +50,11 @@
             
         }
         .description__product img{
-            margin-left:4rem;
-            margin-right: 4rem;
-            margin-top:0.5rem;
+            margin:0.5rem 5rem;
         }
         /*image 1*/              
         #img1:target ~ .card__diapo .card__diapo--inside{
-            transform:translatex(0)
+            transform:translatex(-3%)
         }
         /*image 2*/
         #img2:target ~ .card__diapo .card__diapo--inside{
@@ -64,11 +62,11 @@
         }
         /*image 3*/
         #img3:target ~ .card__diapo .card__diapo--inside{
-            transform:translatex(-50%)
+            transform:translatex(-53%)
         }
         /*image 4*/
         #img4:target ~ .card__diapo .card__diapo--inside{
-            transform:translatex(-77%)
+            transform:translatex(-80%)
         }
 
         /*navigation avec images miniatures*/
@@ -91,7 +89,8 @@
         .description{
             border: 1px solid #000;
             padding: 2rem;
-            padding-bottom:2rem;
+            height: auto;
+            overflow:auto;
             text-align: justify;
             background-color: var(--color__background--textProductDetail);
             border-bottom-left-radius: 15px;
@@ -100,65 +99,147 @@
         .description__price{
             float: right;
             font-weight: bold;
-            margin-top:0.5rem;
+            margin-top: 1rem;
         }
+        @media all and (min-width: 650px) {
+            .product{
+            width: 19rem;  
+            }  
+            #img1:target ~ .card__diapo .card__diapo--inside{
+            transform:translatex(-1%)
+            }
+            /*image 2*/
+            #img2:target ~ .card__diapo .card__diapo--inside{
+                transform:translatex(-26%)
+            }
+            /*image 3*/
+            #img3:target ~ .card__diapo .card__diapo--inside{
+                transform:translatex(-47%)
+            }
+            /*image 4*/
+            #img4:target ~ .card__diapo .card__diapo--inside{
+                transform:translatex(-72%)
+            }
+            .carousel{
+            height: 21rem;
+            }
+        }
+        @media all and (min-width: 850px) {
+            .product{
+              min-width:40rem;
+            }
+            .product h2{
+                margin-bottom:2rem;
+            }
+            .article{
+                display:flex;    
+            }
+            .carousel,
+            .description{   
+               width:100%;
+            }
+            .carousel{
+                border-top-left-radius: 15px;
+                border-bottom-left-radius: 15px;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                margin-top:0;
+                min-width:18rem;
+            }
+            .description{
+                min-width: 50%;;
+                height: 17rem;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
 
+            }
+            #img3:target ~ .card__diapo .card__diapo--inside{
+                transform:translatex(-50%)
+            }
+            /*image 4*/
+            #img4:target ~ .card__diapo .card__diapo--inside{
+                transform:translatex(-75%)
+            }
+            .description__price{
+                padding-bottom:1rem;
+            }
+        }
+        @media all and (min-width: 1000px) {
+            .description{
+               min-width: 60%;
+            }
+        }
+        @media all and (min-width: 1300px) {
+            .description{
+               min-width: 70%;
+            }
+        }
+        @media all and (min-width: 1450px) {
+            .description{
+               min-width: 85%;
+            }
+        }
     </style>
     <h2>Nom du produit</h2>
-    <div class="carousel">
-        <span id="img1" class="target">
-        </span>
-        <span id="img2" class="target">
-        </span>
-        <span id="img3" class="target">
-        </span>
-        <span id="img4" class="target">
-        </span>
-        <div class="card__diapo">
-            <div class="card__diapo--inside">
-                <div class=description__product>
-                    <img src="img/avatar25.png" alt="photo du produit">
-                </div>
-                <div class=description__product>
-                    <img src="img/avatar26.png" alt="photo du produit">
-                </div>
-                <div class=description__product>
-                    <img src="img/avatar28.png" alt="photo du produit">
-                </div>
-                <div class=description__product>
-                    <img src="img/avatar29.png" alt="photo du produit">
-                </div>
-            </div>
-            <ul class="navigation__diapo">
-                <li>
-                    <a href="#img1">
+    <div class="article">
+        <div class="carousel">
+            <span id="img1" class="target">
+            </span>
+            <span id="img2" class="target">
+            </span>
+            <span id="img3" class="target">
+            </span>
+            <span id="img4" class="target">
+            </span>
+            <div class="card__diapo">
+                <div class="card__diapo--inside">
+                    <div class=description__product>
                         <img src="img/avatar25.png" alt="photo du produit">
-                    </a>
-                </li>
-                <li>
-                    <a href="#img2">
+                    </div>
+                    <div class=description__product>
                         <img src="img/avatar26.png" alt="photo du produit">
-                    </a>
-                </li>
-                <li>
-                    <a href="#img3">
+                    </div>
+                    <div class=description__product>
                         <img src="img/avatar28.png" alt="photo du produit">
-                    </a>
-                </li>
-                <li>
-                    <a href="#img4">
+                    </div>
+                    <div class=description__product>
                         <img src="img/avatar29.png" alt="photo du produit">
-                    </a>
-                </li>
-            </ul>
-        </div>   
-    </div>
-    <div class="description">
-        <p class="description__text">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit perspiciatis libero, veniam harum repudiandae reprehenderit ratione nesciunt? Voluptatibus assumenda dolorum, eos, reprehenderit dicta sint quisquam unde architecto dignissimos esse neque.
-        </p>
-        <p class="description__price">
-            30€
-        </p>
+                    </div>
+                </div>
+                <ul class="navigation__diapo">
+                    <li>
+                        <a href="#img1">
+                            <img src="img/avatar25.png" alt="photo du produit">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#img2">
+                            <img src="img/avatar26.png" alt="photo du produit">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#img3">
+                            <img src="img/avatar28.png" alt="photo du produit">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#img4">
+                            <img src="img/avatar29.png" alt="photo du produit">
+                        </a>
+                    </li>
+                </ul>
+            </div>   
+        </div>
+        <div class="description">
+            <p class="description__text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit perspiciatis libero, veniam harum repudiandae reprehenderit ratione nesciunt? Voluptatibus assumenda dolorum, eos, reprehenderit dicta sint quisquam unde architecto dignissimos esse neque. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum amet Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum Lorem Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, fugit? Architecto, doloribus! Perspiciatis, a inventore magni odit in beatae soluta aliquid nisi nam doloremque libero harum, quos quod. At,Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam perspiciatis, soluta unde blanditiis, culpa dolor earum natus accusamus libero voluptas aliquid omnis. Quasi nihil omnis veritatis animi sint quo atque?
+            </p>
+            <p class="description__price">
+                30€
+            </p>
+        </div>
     </div>
 </section>
+ 
