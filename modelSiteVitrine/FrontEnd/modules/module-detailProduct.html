@@ -1,0 +1,164 @@
+
+<section class="product" id="productDetail"> 
+            
+    <style>   
+        body{
+            --color__background--pageProduct:#e6e7e9;
+            --color__background--imgProductDetail:#fff;
+            --color__background--textProductDetail:#f3eaf5;
+            background-color: var(--color__background--pageProduct);
+        }
+        h2{
+            margin-top:4rem;
+            margin-bottom:0;
+            text-align:center;
+            font-family: "merriweather";
+        }
+        .product{
+            max-width: 60%;
+            margin: auto;
+        }
+        .carousel{
+            height: 20rem;
+            border:1px solid #000;
+            margin:auto;
+            overflow: hidden;
+            margin-top:2rem;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        img{
+            max-width: 95%;
+            max-height: 14rem;;
+            object-fit: cover;
+        }
+        .target{
+            display: none
+        }
+        .card_diapo{
+            max-width: 60%;
+            margin: 2rem auto;
+            overflow: hidden;
+        }
+        .card__diapo--inside{                
+            display: flex;
+            width: 450%;
+            transition: transform .6s ease-in-out    
+        }
+        .description__product{
+            background-color: var(--color__background--imgProductDetail);
+            
+        }
+        .description__product img{
+            margin-left:4rem;
+            margin-right: 4rem;
+            margin-top:0.5rem;
+        }
+        /*image 1*/              
+        #img1:target ~ .card__diapo .card__diapo--inside{
+            transform:translatex(0)
+        }
+        /*image 2*/
+        #img2:target ~ .card__diapo .card__diapo--inside{
+            transform:translatex(-28%)
+        }
+        /*image 3*/
+        #img3:target ~ .card__diapo .card__diapo--inside{
+            transform:translatex(-50%)
+        }
+        /*image 4*/
+        #img4:target ~ .card__diapo .card__diapo--inside{
+            transform:translatex(-77%)
+        }
+
+        /*navigation avec images miniatures*/
+        .navigation__diapo{
+            display: flex; /*permet d'aligner les photos les unes à la suite des autres*/
+            list-style-type: none;
+            margin: 0;
+            padding: 0; 
+            background-color: #fff;
+        }
+
+        .navigation__diapo li {    
+            padding: .25rem;    
+        }
+
+        .navigation__diapo img{
+            border: 3px solid white;
+            box-shadow:0 0 5px hsla(0,0%,0%,.4);                
+        }
+        .description{
+            border: 1px solid #000;
+            padding: 2rem;
+            padding-bottom:2rem;
+            text-align: justify;
+            background-color: var(--color__background--textProductDetail);
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        .description__price{
+            float: right;
+            font-weight: bold;
+            margin-top:0.5rem;
+        }
+
+    </style>
+    <h2>Nom du produit</h2>
+    <div class="carousel">
+        <span id="img1" class="target">
+        </span>
+        <span id="img2" class="target">
+        </span>
+        <span id="img3" class="target">
+        </span>
+        <span id="img4" class="target">
+        </span>
+        <div class="card__diapo">
+            <div class="card__diapo--inside">
+                <div class=description__product>
+                    <img src="img/avatar25.png" alt="photo du produit">
+                </div>
+                <div class=description__product>
+                    <img src="img/avatar26.png" alt="photo du produit">
+                </div>
+                <div class=description__product>
+                    <img src="img/avatar28.png" alt="photo du produit">
+                </div>
+                <div class=description__product>
+                    <img src="img/avatar29.png" alt="photo du produit">
+                </div>
+            </div>
+            <ul class="navigation__diapo">
+                <li>
+                    <a href="#img1">
+                        <img src="img/avatar25.png" alt="photo du produit">
+                    </a>
+                </li>
+                <li>
+                    <a href="#img2">
+                        <img src="img/avatar26.png" alt="photo du produit">
+                    </a>
+                </li>
+                <li>
+                    <a href="#img3">
+                        <img src="img/avatar28.png" alt="photo du produit">
+                    </a>
+                </li>
+                <li>
+                    <a href="#img4">
+                        <img src="img/avatar29.png" alt="photo du produit">
+                    </a>
+                </li>
+            </ul>
+        </div>   
+    </div>
+    <div class="description">
+        <p class="description__text">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit perspiciatis libero, veniam harum repudiandae reprehenderit ratione nesciunt? Voluptatibus assumenda dolorum, eos, reprehenderit dicta sint quisquam unde architecto dignissimos esse neque.
+        </p>
+        <p class="description__price">
+            30€
+        </p>
+    </div>
+</section>
