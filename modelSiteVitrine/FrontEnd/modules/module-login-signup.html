@@ -1,0 +1,117 @@
+<section class="signup_login" id="signup_login">   
+    
+    <style>
+        #signup_login{
+            --color__background--btnSubmitSignupLogin:#6fb2f5;
+            --color__background--btnSubmitSignupLoginHover:#7974c4;
+        }
+        .signup_login{
+            max-width:70%; 
+            margin:auto;
+        }
+        .input_formulaire {
+            width: 100%;
+            height: 2rem;
+            border: 1px solid #a2a3a5;
+            border-radius:5px; 
+            text-align: center;
+            font-size: 15px;   
+        }
+        .signup{
+            margin-bottom:5rem;
+        }
+        .signup p,
+        .login p{
+            margin-top:1rem;
+        }
+        input{
+            margin-top:8px;
+            text-align:left;
+        }        
+        .btn_enter{
+            width: 6rem;
+            text-align: center;
+            font-weight: 700;
+            height: 2rem;
+            margin-top:1rem;
+            opacity: 0.8;
+            transition: all 500ms;
+            border-radius: 5px;
+            background-color: var(--color__background--btnSubmitSignupLogin);
+        }
+
+        .btn_enter:hover{
+            transform:scale(1.15);
+            font-weight: bold;
+            border: 1px solid #000;
+            background-color: var(--color__background--btnSubmitSignupLoginHover);
+        }
+        @media all and (min-width: 650px){
+            .title_login,
+            .title_signup{
+                text-align: center;
+            }
+            .btn_enter{
+                margin-left:40%;
+                text-align: center;
+            }
+            .signup_login{
+            max-width:50%; 
+            }
+        }
+        @media all and (min-width: 850px){
+            .signup_login{
+                display:flex;
+                max-width: 90%;
+                justify-content: space-around;
+                align-items: baseline;      
+            }
+        }
+        @media all and (min-width: 1400px){
+            .signup_login{
+                max-width: 70%;
+            }
+        }
+    </style>
+    <div class="signup">
+        <form action="http://localhost:3000/signup" method="post" name="form"  id="formSignup">
+       
+            <div class="title_signup">
+                <h2>Inscription</h2>    
+            </div>
+            <p class="username"> 
+                <label for="username">Votre pseudo </label>
+                <input class="input_formulaire" type="text" name="username" id="username" title="Veuillez n'écrire que des lettres" pattern ="[A-z-_ çàâéèeîïù]{2,30}" placeholder="DUPONT" required/>
+            </p>
+            <p class="email"> 
+                <label for="email">Votre mail</label>
+                <input class="input_formulaire" type="email" name="email" id="email" title="Veuillez écrire un mail valide" pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]{2,}\.[a-zA-Z]{2,4}$" placeholder="john@terre.fr" required/>
+            </p>
+            <p class="password"> 
+                <label for="password">Votre mot de passe</label>
+                <input class="input_formulaire" type="password" name="password" id="password" title="Votre mot de passe doit contenir 8 caractères dont 1chiffre, une minuscule et une majuscule(pas de caractère spéciaux" placeholder="AZEaze123" required/>
+            </p>
+            <p>
+                <input type="submit" id="btnSubmitNewUser" class="btn_enter" name="submit" value="Envoyer">
+            </p> 
+        </form>
+    </div>
+    <div class="login">
+        <form action="http://localhost:3000/login" method="post" name="form"  id="formLogin">
+            <h2 class="title_login">Connection</h2>
+            <p class="email"> 
+                <label for="emailRecognized">Votre email</label>
+                <input class="input_formulaire" type="email" name="email" id="emailRecognized" title="Veuillez écrire un mail valide"  pattern="[a-zA-Z0-9.]+@[a-zA-Z0-9.-]{2,}\.[a-zA-Z]{2,4}$" placeholder="john@terre.fr" required/>    
+            </p>  
+            <p class="password">
+                <label for="passwordRecognized"> Votre mot de passe</label>
+                    <input class="input_formulaire" type="password" name="password" id="passwordRecognized" title="Votre mot de passe doit contenir 8 caractères dont 1chiffre, une minuscule et une majuscule pas de caractère spéciaux"  placeholder="AZEaze123" required/>
+                
+            </p>
+            <p>
+                <input type="submit" id="btnSubmitMember" class="btn_enter" name="submit" value="Envoyer">
+            </p>  
+        </form>
+    </div>
+
+</section>
