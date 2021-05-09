@@ -1,62 +1,68 @@
-  
-        <style>
-            #contact{
-                --color__background--btnSend: #a2dab6;
-                --color__background--btnSendHover:#46b188;
-            }
-            .form{
-            width:80%;
-            margin:auto;
 
-            }
-            .form h3 {
-            font-size: 2rem;
-            margin-top: 2rem;
-            text-align: center;
-            }        
-            .form-field {
-            display: flex;
-            padding: 12px;
-            border: 1px solid rgba(48, 48, 48, 0.3);
-            border-radius: 8px;
-            margin-top: 10px;
-            width: 100%;
-            outline: none;
-            font-size: 0.8em;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-            }
-            .form-field:focus {
-            background-color: #FFFFFF;
-            }
-            .btn_enter {
-            width: 30%;
-            margin-left:35%;
-            margin-top: 2rem;
-            font-weight: bold;
-            background-color: var(--color__background--btnSend);
-            border-radius: 8px;
-            border: none;
-            padding: 12px;
-            }
-            .btn_enter:hover {
-            background-color: var(--color__background--btnSendHover);
-            }
-        </style>
-        <section class="form" id="contact">
-            <h3>Formulaire de contact</h3>
-            <form action="mail.php" name="myForm" method="post" id="formContact">
-                <label for="username">Nom </label>
-                <input class="username form-field" type="textarea" name="username" id="username"
-                    title="Veuillez n'écrire que des lettres" pattern="[A-z-_ çàâéèeîïù]{2,30}" placeholder="Jean"
-                    required />
-                <label for="email">E-mail</label>
-                <input class="email form-field" type="email" name="email" id="email"
-                    title="Veuillez écrire un mail valide"
-                    pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]{2,}\.[a-zA-Z]{2,4}$" placeholder="dupond@site.fr" required />
-                <label for="message">Votre message</label>
-                <textarea class="message form-field" type="textarea" minlength="15" maxlength="400" rows="10" cols="40" name="message" id="message" placeholder="Mon message..."
-                    title="Votre message doit contenir entre 15 et 300 caratères sans caractère spéciaux"></textarea>
-                <input type="submit" id="btnSubmitMessage" class="btn_enter" name="submit" value="Envoyer">
-            </form>
-        </section>
+            <style>
+                #contact{
+                    --color__background--btnSend: #a2dab6;
+                    --color__background--btnSendHover:#46b188;
+                }
+                .form{
+                width:80%;
+                margin:auto;
+    
+                }
+                .form h3 {
+                font-size: 2rem;
+                margin-top: 2rem;
+                text-align: center;
+                }        
+                .form-field {
+                display: flex;
+                padding: 12px;
+                border: 1px solid rgba(48, 48, 48, 0.3);
+                border-radius: 8px;
+                margin-top: 10px;
+                width: 100%;
+                outline: none;
+                font-size: 0.8em;
+                margin-bottom: 10px;
+                box-sizing: border-box;
+                }
+                .form-field:focus {
+                background-color: #FFFFFF;
+                }
+                .btn_enter {
+                width: 30%;
+                margin-left:35%;
+                margin-top: 2rem;
+                font-weight: bold;
+                background-color: var(--color__background--btnSend);
+                border-radius: 8px;
+                border: none;
+                padding: 12px;
+                }
+                .btn_enter:hover {
+                background-color: var(--color__background--btnSendHover);
+                }
+            </style>
+            <section class="form" id="contact">
+                <h3>Formulaire de contact</h3>
+                <form action="mail.php" name="myForm" method="post" id="formContact">
+                    <label for="username">Nom </label>
+                    <input class="username form-field" type="textarea" name="username" id="username"
+                        title="Veuillez n'écrire que des lettres" pattern="[A-z-_ çàâéèeîïù]{2,30}" placeholder="Jean"
+                        required />
+                    <label for="email">E-mail</label>
+                    <input class="email form-field" type="email" name="email" id="email"
+                        title="Veuillez écrire un mail valide"
+                        pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]{2,}\.[a-zA-Z]{2,4}$" placeholder="dupond@site.fr" required />
+                    <label for="message">Votre message</label>
+                    <textarea class="message form-field" type="textarea" minlength="15" maxlength="400" rows="10" cols="40" name="message" id="message" placeholder="Mon message..."
+                        title="Votre message doit contenir entre 15 et 300 caratères sans caractère spéciaux">
+                    </textarea>
+                    <label for="phone">Téléphone (si vous le souhaitez) </label>
+                    <input class="phone form-field" type="textarea" name="phone" id="phone"
+                        title="Veuillez écrire votre numéro de téléphone viables" pattern="[1-9]{10}" placeholder="0123456789"
+                         />
+                    <input type="submit" id="btnSubmitMessage" class="btn_enter" name="submit" value="Envoyer">
+                </form>
+            </section>
+    
