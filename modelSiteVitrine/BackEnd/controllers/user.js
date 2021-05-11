@@ -29,7 +29,8 @@ exports.createAccount = (req, res, next) => {
                     name: req.body.name,
                     firstName: req.body.firstName,
                     email: req.body.email,
-                    password: hash
+                    password: hash,
+                    isAdmin: req.body.isAdmin
                 }).then(() => res.status(201).send({ message: "Nouvel utilisateur créé !" }))
                 .catch(error => res.status(400).json({ error: "éléments manquants" }));
              })

@@ -25,7 +25,6 @@ exports.createProduct = (req, res, next) => {
 };
 
 //route pour voir tous les produits
-//route pour voir tous les tchats
 exports.getAllProducts = (req, res, next) => {
     Product.findAll({ 
         include: [ 
@@ -42,37 +41,6 @@ exports.getAllProducts = (req, res, next) => {
             res.status(404).json({ error })
         );
 };
-       
-// //route pour modifier un produit
-// exports.modifyProduct = (req, res, next) => {
-//     const product = req.body;
-//     console.log(product)
-//     //si nouvelle image reçue dans la requete
-//         if(req.file) {
-//             Product.findOne({ id: req.params.id })
-//             .then(product => {
-//                 const filename = sauce.attachment.split('/images/')[1];
-//                 firesystem.unlink(`images/${filename}`, (error => {
-//                     if(error) 
-//                         {console.log(error)}
-//                     else {
-//                         console.log("image effacée");
-//                     }
-//                 })) 
-//             })
-//         };
-//         const productObject = req.file ?
-//             {   
-//                 userId: req.body.userId,
-//                 title: req.body.title,
-//                 description: req.body.description,
-//                 price: req.body.price,
-//                 attachment: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`, 
-//             } : { ...req.body };
-//         Product.updateOne({ id: req.params.id }, { ...productObject, id: req.params.id }) 
-//             .then(() => res.status(200).json({ message: 'produit modifiée !' }))
-//             .catch(error => res.status(400).json({ error }));
-// };
 
 //route pour supprimer un produit
 exports.deleteProduct = (req, res, next) => {
@@ -97,10 +65,7 @@ exports.deleteProduct = (req, res, next) => {
                     res.status(200).json({ 
                         message: 'Votre produit est supprimé !' 
                 }))
-                .catch(error => res.status(404).json({ error:"erreur dans la requête" })); 
-        // }else {
-        //     res.status(401).json({ "message":"Vous n'avez pas les droits pour supprimer ce produit" }) 
-        // }    
+                .catch(error => res.status(404).json({ error:"erreur dans la requête" }));   
     }).catch(error => res.status(404).json({ error:"erreur dans la requête" })); 
         
 };

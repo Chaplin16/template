@@ -23,6 +23,11 @@ const User = database.define('User', {
       required: true,
       type: DataTypes.STRING,
     },
+    isAdmin:{
+      allowNull: false,
+      required: true,
+      type: DataTypes.INTEGER,
+    }
   }, {
     Sequelize,
     modelName: 'User',
