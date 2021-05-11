@@ -1,0 +1,183 @@
+
+    <section class="cards" id="cards"></section>
+    <style>
+                #cards{
+                    --color__background--card:#ebebeb;
+                    --color__background--back-img:#6f6f70;
+                    --color__background--btnSeeDetailProduct:#eec3aa;
+                }
+                .cards{
+                    display: flex;
+                    flex-wrap: wrap;
+                    row-gap:1rem;
+                    
+                }
+                .btn_user{
+                    display: flex;
+                    align-items: center;
+                    padding-left:1rem;
+                }
+                .change{
+                    padding-left: 0.5rem;
+                    padding-bottom:5px;
+                    width:1.5rem;
+                }
+                .trash{
+                    width: 1.8rem;
+
+                }
+                .item{
+                    flex-direction: column;
+                    max-width:55%;
+                    margin:auto;
+                    border: 2px solid #000;
+                    border-radius: 25px;
+                    align-items: center;
+                    background-color: var(--color__background--card) ;
+                    color: #000;
+                    font-size: 0.9rem;
+                }
+                .item--img p{
+                    border: 1px solid #000;
+                    margin:5px;
+                    border-top-left-radius: 15px;
+                    border-top-right-radius: 15px;
+                    overflow: hidden;
+                    background-color: var(--color__background--back-img);
+                }
+                .item--img img{
+                    object-fit: contain;
+                    width: 100%;
+                    
+                    max-height: 150px; 
+                }
+                .item--description{
+                    padding:0 0.8rem 0rem 0.8rem;
+                    text-align: justify;
+                }
+                .item--description p{
+                    padding-top:1rem;
+                }
+                .item--description .title{
+                    font-weight:bold;
+                    font-size:1.2rem;
+                }
+                .item--description .price{
+                    float:right;
+                    font-weight: bold;
+                }
+                .btn_detail--product{
+                    padding:0.5rem;
+                    margin:15px 0;
+                    border-radius:10px;
+                    font-weight: bold;
+                    background-color: var(--color__background--btnSeeDetailProduct);    
+                    transform: scale(1);
+                }
+                .btn_detail--product:hover{
+                    transform: scale(1.1);
+                }
+                @media all and (min-width: 500px) {
+                    .item{
+                        max-width:44%;
+                    }
+                }
+                @media all and (min-width: 600px) {
+                    .item{
+                        max-width:40%;
+                    }
+                }
+                @media all and (min-width: 700px) {
+                    .item{
+                        max-width:30%;
+                    }
+                }
+                @media all and (min-width: 850px) {
+                    .item{
+                        max-width:22%;
+                    }
+                }
+                @media all and (min-width: 1150px) {
+                    .cards{
+                        margin:0 2rem;
+                    }
+                }
+                @media all and (min-width: 1350px) {
+                    .item{
+                        max-width: 18%;
+                    }
+                }
+                @media all and (min-width: 1650px) {
+                    .item{
+                        max-width: 15%;
+                    }
+                }
+    </style>
+    <script>
+        // modele item
+        class Items{
+            constructor(item) {
+                this.id = item.id;
+                this.userId = item.userId;
+                this.name = item.name;
+                this.attachment = item.attachment;
+                this.description = item.description;
+                this.price = item.price;
+                this.createdAt = item.createAt;
+                this.updatedAt = item.updatedAt;
+            }
+        }
+        function displayProducts(user){
+            return `<div class="item">
+            <div class=item--img>
+                <p>
+            <img src=${this.attachment} alt="photo de l'article">
+                </p>
+            </div>
+            <div class="item--description">
+                <p class="title">
+                    ${this.name}
+                </p>
+                <p class="text"> 
+                    ${this.description}
+                </p>
+                <p class="price">
+                    ${this.price}€
+                </p>
+                <input type="submit" id="btn_detail--product" type="button" onclick="window.location.href ='#';" class="btn_detail--product" data-id="${this.id}" data-image="${this.attachment}" data-name="${this.name}" data-description="${this.description}" data-price="${this.price}" value="plus de détails">
+            </div>
+            <div class="btn_user">
+                <img role= "button" class="trash" data-id="${this.id}" src="img/trash.png" alt="supprimer" data-enable="${user.id == this.userId.id}"  />   
+                <img role= "button" class="change" data-id="${this.id}"  src="img/write.png" alt="modifier" data-enable="${user.id == this.user.id}" />   
+            </div>
+        </div> `;
+        }
+
+        let cards = document.getElementById("cards");
+        
+        function displayAllProducts(){
+            fetch('http://localhost:3000' + '/product/getAll', {
+                method: "get",
+                headers: { 
+                    "Content-Type": "application/json;charset=UTF-8",
+                    "Authorization": `Bearer ${info.token}`
+                },
+                mode: "cors"
+            }).then(function (response) {
+                if(response.status == 401){
+                    window.location.assign('index.html');
+                }else{
+                    return response.json();
+                }
+            }).then(function (listProducts) {
+                //afficher tous les tchats
+                    allTchatsMembers.innerHTML ="";
+                    for (let product of listProducts) {
+                        let card = new Items(product);           
+                        cards.innerHTML += card.displayProducts(info);
+                    }
+            })        
+        }
+    </script>    
+</section>        
+ 

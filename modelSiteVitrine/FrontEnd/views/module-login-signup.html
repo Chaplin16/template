@@ -1,0 +1,381 @@
+               
+        <style>
+            #signup_login {
+                --color__background--btnSubmitSignupLogin: #6fb2f5;
+                --color__background--btnSubmitSignupLoginHover: #7974c4;
+            }
+            .select{
+                display:flex;
+                justify-content: center;
+                margin:1rem;
+                font-weight: bold;
+                font-size:2rem;
+                transform: scale(1);
+            }
+            .btnSignup,
+            .btnLogin{
+                padding: 0.5rem 1.5rem;
+                font-size: 1rem;
+                background-color:#a8d4ff;
+                margin: 2rem 0;
+            }
+            .btnSignup:hover,
+            .btnLogin:hover{
+                background-color:#74a1ce;
+            }
+            .btnSignup{
+                border-bottom-left-radius: 15px;
+                border-top-left-radius: 15px;
+            }
+            .btnLogin{
+                border-bottom-right-radius: 15px;
+                border-top-right-radius: 15px;
+            }
+            .signup_login {
+                max-width: 70%;
+                margin: auto;
+            }
+            .message{
+                color:#000;
+                max-width: 90%;
+                margin-top:3rem;
+                
+            }
+            .message h2{
+                padding: 0.5rem 1.5rem;
+                font-size: 1.1rem;
+                background-color:#a8d4ff;
+                margin: 2rem 0;
+                border-radius: 15px;
+                border:2px solid #000;
+            }
+            .message input {
+                border-radius: 10px;
+                border: 1px solid #000;
+                background-color: #cce3fa;
+                padding: 0.5rem;
+                margin-top:1.5rem;
+                font-size: 0.8rem;
+                font-weight: bold;
+            }
+            .message input:hover {
+                background-color: #a8d4ff;
+            }
+            .selectChoice{
+                margin-top:2rem;
+                text-align: center;
+            }
+            .input_formulaire {
+                width: 100%;
+                height: 2rem;
+                border: 1px solid #a2a3a5;
+                border-radius: 5px;
+                text-align: center;
+                font-size: 15px;
+            }
+
+            .signup {
+                margin-bottom: 5rem;
+                border-radius: 15px;
+                border: 1px solid #b1d4f7;
+                padding:2rem;
+            }
+            .login {
+                border: 1px solid #b1d4f7;
+                padding:2rem;
+                border-radius: 15px;
+            }
+            .signup p,
+            .login p {
+                margin-top: 1rem;
+            }
+
+            input {
+                margin-top: 8px;
+                text-align: left;
+            }
+
+            .btn_enter {
+                width: 6rem;
+                text-align: center;
+                font-weight: 700;
+                height: 2rem;
+                margin-top: 1rem;
+                opacity: 0.8;
+                transition: all 500ms;
+                border-radius: 5px;
+                background-color: var(--color__background--btnSubmitSignupLogin);
+            }
+
+            .btn_enter:hover {
+                transform: scale(1.15);
+                font-weight: bold;
+                border: 1px solid #000;
+                background-color: var(--color__background--btnSubmitSignupLoginHover);
+            }
+
+            .resetPassword {
+                margin: 2rem;
+            }
+
+            .resetPassword:hover {
+                color: var(--color__background--btnSubmitSignupLoginHover);
+            }
+
+            @media all and (min-width: 650px) {
+
+                .title_login,
+                .title_signup {
+                    text-align: center;
+                }
+
+                .signup_login {
+                    max-width: 50%;
+                }
+            }
+
+            @media all and (min-width: 850px) {
+                .signup_login {
+                    display: flex;
+                    max-width: 90%;
+                    justify-content: space-around;
+                    align-items: baseline;
+                    column-gap: 2rem;
+                }
+                form p:last-child{
+                    text-align: center;
+                }
+                .message input {
+                    margin-right:2rem;
+                }
+            }
+
+            @media all and (min-width: 1400px) {
+                .signup_login {
+                    max-width: 70%;
+                }
+            }
+    </style>
+    <div class="select" id="select">
+        <input type="button" id="btnSignup" class="btnSignup" value="S'incrire">
+        <input type="button" id="btnLogin" class="btnLogin" value="Se connecter">
+    </div>
+    <section class="signup_login" id="signup_login">
+        <div class="signup" id="signup">
+            <!-- inscription pour un nouvel utilisateur  -->
+            <form action="http://localhost:3000/signup" method="post" name="form" id="formSignup">
+
+                <div class="title_signup">
+                    <h2>Inscription</h2>
+                </div>
+                <p class="name">
+                    <label for="name">Votre nom </label>
+                    <input class="input_formulaire" type="text" name="name" id="name"
+                        title="Veuillez n'écrire que des lettres" pattern="[A-z-_ çàâéèeîïù]{2,30}"
+                        placeholder="DUPONT" required />
+                </p>
+                <p class="firstName">
+                    <label for="firstName">Votre prénom </label>
+                    <input class="input_formulaire" type="text" name="firstName" id="firstName"
+                        title="Veuillez n'écrire que des lettres" pattern="[A-z-_ çàâéèeîïù]{2,30}"
+                        placeholder="Edouard" required />
+                </p>
+                <p class="email">
+                    <label for="email">Votre mail</label>
+                    <input class="input_formulaire" type="email" name="email" id="email"
+                        title="Veuillez écrire un mail valide"
+                        pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]{2,}\.[a-zA-Z]{2,4}$" placeholder="john@terre.fr"
+                        required />
+                </p>
+                <p class="password">
+                    <label for="password">Votre mot de passe</label>
+                    <input class="input_formulaire" type="password" name="password" id="password"
+                        title="Votre mot de passe doit contenir 8 caractères dont 1chiffre, une minuscule et une majuscule(pas de caractère spéciaux"
+                        placeholder="AZEaze123" required />
+                </p>
+                <p>
+                    <input type="radio" id="isAdmin" name="isAdmin" value="Administrateur">
+                    <label for="isAdmin">Administrateur</label>
+                </p>
+                <p>
+                    <input type="submit" id="btnSubmitNewUser" class="btn_enter" name="submit" value="Envoyer">
+                </p>
+            </form>
+        </div>
+        <div class="login" id="login">
+            <!-- inscription pour un utilisateur deja connu -->
+            <form action="http://localhost:3000/login" method="post" name="form" id="formLogin">
+                <h2 class="title_login">Connection</h2>
+                <p class="email">
+                    <label for="emailRecognized">Votre email</label>
+                    <input class="input_formulaire" type="email" name="email" id="emailRecognized"
+                        title="Veuillez écrire un mail valide"
+                        pattern="[a-zA-Z0-9.]+@[a-zA-Z0-9.-]{2,}\.[a-zA-Z]{2,4}$" placeholder="john@terre.fr"
+                        required />
+                </p>
+                <p class="password">
+                    <label for="passwordRecognized"> Votre mot de passe</label>
+                    <input class="input_formulaire" type="password" name="password" id="passwordRecognized"
+                        title="Votre mot de passe doit contenir 8 caractères dont 1chiffre, une minuscule et une majuscule pas de caractère spéciaux"
+                        placeholder="AZEaze123" required />
+
+                </p>
+                <p>
+                    <input type="submit" id="btnSubmitMember" class="btn_enter" name="submit" value="Envoyer">
+                </p>
+            </form>
+            <div class="resetPassword" id="resetPassword">
+            <a href="resetPassword.html">Vous avez oublié votre mot de passe: cliquez ici!</a>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            //boutton pour faire apparaitre soit login soit signup
+            let btnSignup = document.getElementById('btnSignup');
+            let login = document.getElementById('login');
+            let signup = document.getElementById('signup');
+
+            signup.setAttribute("style", "display:block");
+            login.setAttribute("style", "display:none");
+
+            btnSignup.addEventListener("click", function (event) { 
+                event.preventDefault();
+                signup.setAttribute("style", "display:block");
+                login.setAttribute("style", "display:none");
+            })
+
+            let btnLogin = document.getElementById('btnLogin');
+            btnLogin.addEventListener("click", function (event) { 
+                event.preventDefault();
+                login.setAttribute("style", "display:block");
+                signup.setAttribute("style", "display:none");
+            })
+
+            //reinitialiser le password
+            let resetPassword = document.getElementById('resetPassword');
+            let signup_login = document.getElementById('signup_login');
+            let select = document.getElementById('select');
+            resetPassword.addEventListener("click", function(){
+                event.preventDefault();
+                select.setAttribute("style", "display:none");
+                signup.setAttribute("style", "display:none");
+                login.setAttribute("style", "display:none");
+                signup_login.innerHTML = `
+                <div class="message"> 
+                    <h2>Réinitialisation de votre mot de passe</h2>
+                    <p> Voulez vous vraiment réinitialiser votre mot de passe?<br> Une fois votre demande confimée, vous ne pourrez plus utiliser votre ancien mot de passe.
+                    </p>
+                    <p> Vous recevrez un nouveau mot de passe sur votre boite mail valable 3heures. <br>
+                    Connectez-vous avec ce nouveau mot de passe. Vous pourrez ensuite le modifier dans votre espace personnel</p>
+                    <div class="selectChoice">
+                        <input type="button" id="btnReset" class="btnReset" value="Recevoir un nouveau mot de passe">
+                        <input type="button" id="btnReturn" class="btnReturn" value="Revenir sur la page d'accueil">
+                    </div>
+                </div>`
+                let btnReset =document.getElementById('btnReset');
+                let btnReturn = document.getElementById('btnReturn');
+                btnReturn.addEventListener("click", function() {
+                    window.location = "index.html";
+                })
+            })
+
+            //recuperer les données pour un nouvel utilisateur
+            let btnSubmitNewUser = document.getElementById("btnSubmitNewUser");
+            btnSubmitNewUser.addEventListener("click", function (event) { 
+                let formSignup = document.getElementById("formSignup");
+                event.preventDefault();
+
+                let isAdmin = document.getElementById("isAdmin").checked;
+                if (isAdmin==true){
+                    isAdmin == 1
+                }else{
+                    isAdmin == 0
+                }
+
+                if (formSignup.reportValidity() == true) {//verification si le formulaire est correctement rempli
+                    let contact = { // je cree un objet avec les valeurs que je recupere par les id
+                        'name': document.getElementById("name").value,
+                        'firstName': document.getElementById("firstName").value,
+                        'email': document.getElementById("email").value,
+                        'password': document.getElementById("password").value,
+                        isAdmin
+                        
+                    }
+                    let sendInfo = JSON.stringify(contact);
+                    //j'envoie des données au serveur    
+                    fetch('http://localhost:3000' + '/signup', {
+                        method: "post",
+                        headers: { "Content-Type": "application/json;charset=UTF-8" },
+                        mode: "cors",
+                        body: sendInfo
+                    })
+                        .then(function (response) {
+                            return response.json()
+                        })
+                        .then(function () {
+                           
+                            document.getElementById("name").value = "";
+                            document.getElementById("firstName").value = "";
+                            document.getElementById("email").value = "";
+                            document.getElementById("password").value = "";
+                            document.getElementById("isAdmin").checked = false;
+                            alert('inscription effectuée avec succès! merci. Veuillez vous connecter')
+                        })
+                        //le retour en cas de non connection au serveur 
+                        .catch(function (err) {
+                            console.log('Retour info Api problem: ' + err.message);
+                        })
+                }
+            });
+            // recuperer les données pour un utilisateur deja connu
+            let btnSubmitMember = document.getElementById("btnSubmitMember");
+
+            btnSubmitMember.addEventListener("click", function (event) { 
+                let formLogin = document.getElementById("formLogin");
+                event.preventDefault();
+
+                if (formLogin.reportValidity() == true) {//verification si le formulaire est correctement rempli
+                    let contact = { 
+                        'email': document.getElementById("emailRecognized").value,
+                        'password': document.getElementById("passwordRecognized").value,
+                    }
+                    let sendInfo = JSON.stringify(contact);
+                    let email = JSON.stringify(contact.email);
+
+                    fetch('http://localhost:3000' + '/login', {
+                        method: "post",
+                        headers: { "Content-Type": "application/json;charset=UTF-8" },
+                        mode: "cors",
+                        body: sendInfo
+                    }).then(function (response) {
+                        return response.json()
+                    })
+                        .then(function (data) {
+                            let userConnected = {
+                                id:data.user.id,
+                                name: data.user.name,
+                                firstName: data.user.firstName,
+                                email: data.user.email
+                            }
+                            sessionStorage.setItem("user",JSON.stringify(userConnected))
+                            
+                            document.getElementById("emailRecognized").value ="";
+                            document.getElementById("passwordRecognized").value = "";
+                            // window.location.assign("listProducts.html")
+                        }).catch(function (err) {
+                            console.log('Il n y a personne d identifier avec ce mail' + err.message);
+                        })
+                        //le retour en cas de non connection au serveur 
+                        .catch(function (err) {
+                            console.log('Retour info Api problem: ' + err.message);
+                        })
+                }
+
+            });
+  
+
+        </script>        
+
+    </section>
+
+
